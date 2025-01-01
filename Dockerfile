@@ -6,16 +6,7 @@ FROM ubuntu:22.04 AS buildstep
 LABEL maintainer="Richard Bullington-McGuire <richard.bullington.mcguire@gmail.com>"
 
 ENV BEANSTALKD_VERSION="1.13"
-# This is really key; 0 makes beanstalkd fsync after every write.
-# For Freezing Saddles, we want maximum durability and can afford the minor
-# performance hit.
-ENV BEANSTALKD_FSYNC_AFTER="0"
-# Enable verbose log output
-ENV BEANSTALKD_VERBOSE="-V"
-
 RUN apt-get update && apt-get install -y software-properties-common build-essential git curl
-
-
 RUN curl -sL https://github.com/kr/beanstalkd/archive/v${BEANSTALKD_VERSION}.tar.gz | tar xvz -C /tmp
 
 WORKDIR /tmp/beanstalkd-${BEANSTALKD_VERSION}
