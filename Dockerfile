@@ -5,7 +5,7 @@
 FROM ubuntu:22.04 AS buildstep
 LABEL maintainer="Richard Bullington-McGuire <richard.bullington.mcguire@gmail.com>"
 
-ENV BEANSTALKD_VERSION="1.10"
+ENV BEANSTALKD_VERSION="1.13"
 # This is really key; 0 makes beanstalkd fsync after every write.
 # For Freezing Saddles, we want maximum durability and can afford the minor
 # performance hit.
