@@ -9,7 +9,7 @@ on:  # yamllint disable-line
 jobs:
 
   build:
-    uses: freezingsaddles/freezing-web/.github/workflows/build-docker.yml@1.4.18
+    uses: freezingsaddles/freezing-web/.github/workflows/build-docker.yml@1.6.0
     concurrency: build-deploy-and-test
     with:
       tag: latest
@@ -33,5 +33,5 @@ jobs:
           script: |
             set -euo pipefail
             cd /opt/compose
-            docker-compose pull beanstalkd
-            docker-compose up -d beanstalkd
+            docker compose pull beanstalkd
+            docker compose up -d beanstalkd
