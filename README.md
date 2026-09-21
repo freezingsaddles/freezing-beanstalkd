@@ -1,3 +1,5 @@
+> **Moved to [freezingsaddles/freezing](https://github.com/freezingsaddles/freezing).** This code is now [`docker/beanstalkd`](https://github.com/freezingsaddles/freezing/tree/main/docker/beanstalkd) there. Issues here are left as a record.
+
 # Dockerfile for Beanstalkd
 
 This is a Dockerization of [beanstalkd](http://kr.github.io/beanstalkd/), which persists the data to a `/data` volume, with options selected to fit the Freezing Saddles use case.
